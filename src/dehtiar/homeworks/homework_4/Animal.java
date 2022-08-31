@@ -15,10 +15,11 @@ public class Animal {
         this.name = name;
     }
 
-    public void run(int lengthObstacle){
-        System.out.println("Animal ran "+lengthObstacle+" metres");
+    public void run(int lengthObstacle) {
+        System.out.println("Animal ran " + lengthObstacle + " metres");
     }
-    public void swim(int lengthObstacle){
-        System.out.println("Animal swam "+lengthObstacle+" metres");
+
+    public void swim(int lengthObstacle) {
+        System.out.println("Animal swam " + lengthObstacle + " metres");
     }
 }
