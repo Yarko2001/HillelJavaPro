@@ -1,7 +1,7 @@
 package dehtiar.homeworks.homework_5.part_2.model;
 
 import dehtiar.homeworks.homework_5.part_2.services.Actionable;
-import dehtiar.homeworks.homework_5.part_2.services.Motion;
+import dehtiar.homeworks.homework_5.part_2.services.impl.Motionlmpl;
 
 abstract class Participant {
     protected String info;
@@ -23,7 +23,7 @@ abstract class Participant {
         this.successfulJumpResult = "";
         this.unsuccessfulJumpResult = "";
         this.condition = true;
-        this.motion = new Motion();
+        this.motion = new Motionlmpl();
     }
 
     public String getInfo() {
