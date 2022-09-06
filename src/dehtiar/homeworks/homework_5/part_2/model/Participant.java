@@ -1,6 +1,6 @@
 package dehtiar.homeworks.homework_5.part_2.model;
 
-import dehtiar.homeworks.homework_5.part_2.services.Actionable;
+import dehtiar.homeworks.homework_5.part_2.services.Motion;
 import dehtiar.homeworks.homework_5.part_2.services.impl.Motionlmpl;
 
 abstract class Participant {
@@ -12,7 +12,7 @@ abstract class Participant {
     protected String successfulJumpResult;
     protected String unsuccessfulJumpResult;
     private boolean condition;
-    private Actionable motion;
+    private Motion motion;
 
     Participant(String name, int maxDistance, double maxHeight) {
         this.info = "";
