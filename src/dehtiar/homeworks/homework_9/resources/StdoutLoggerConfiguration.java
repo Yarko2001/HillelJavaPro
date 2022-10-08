@@ -24,7 +24,7 @@ public class StdoutLoggerConfiguration implements Configurable {
   }
 
   public void load() {
-    try (InputStream is = Files.newInputStream(Paths.get("resources/loggerConfig.properties"))) {
+    try (InputStream is = Files.newInputStream(Paths.get("my_logger_config.properties"))) {
       Properties properties = new Properties();
       properties.load(is);
 
@@ -32,7 +32,7 @@ public class StdoutLoggerConfiguration implements Configurable {
       format = properties.getProperty("logger.format");
 
     } catch (NoSuchFileException ex) {
-      System.out.println("*File [loggerConfig.properties] is empty");
+      System.out.println("*File [my_logger_config.properties] is empty");
     } catch (IOException e) {
       e.printStackTrace();
     }

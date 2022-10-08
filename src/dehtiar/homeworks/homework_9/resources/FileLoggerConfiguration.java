@@ -29,7 +29,7 @@ public class FileLoggerConfiguration implements Configurable {
 
   public void load() {
     try (InputStream input = Files.newInputStream(
-        Paths.get("resources/loggerConfig.properties"))) {
+        Paths.get("my_logger_config.properties"))) {
       Properties prop = new Properties();
       prop.load(input);
 
@@ -39,7 +39,7 @@ public class FileLoggerConfiguration implements Configurable {
       format = prop.getProperty("logger.format");
 
     } catch (NoSuchFileException ex) {
-      System.out.println("*File [loggerConfig.properties] is empty");
+      System.out.println("*File [my_logger_config.properties] is empty");
     } catch (IOException ex) {
       ex.printStackTrace();
     }
