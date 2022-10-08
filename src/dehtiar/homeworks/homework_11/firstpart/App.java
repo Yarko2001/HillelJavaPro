@@ -11,7 +11,7 @@ public class App {
         "hare"};
     List<String> animals = new ArrayList<>(Arrays.asList(wildAnimals));
     String str = "bear";
-    System.out.println("Number of occurrences: " + countOccurance(animals, str));
+    System.out.println("Number of occurrences: " + countOccurrence(animals, str));
 
     Integer[] arrNum = {1, 2, 3, 4, 5, 6, 7, 8, 9, 0};
     System.out.println(toList(arrNum));
@@ -25,7 +25,7 @@ public class App {
 
   }
 
-  private static int countOccurance(List<String> words, String str) {
+  private static int countOccurrence(List<String> words, String str) {
 
     if (words == null || str == null) {
       return 0;
