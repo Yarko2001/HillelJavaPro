@@ -1,25 +1,28 @@
 package dehtiar.homeworks.homework_9;
 
-import dehtiar.homeworks.homework_9.api.Loggable;
-import dehtiar.homeworks.homework_9.resources.FileLogger;
-import dehtiar.homeworks.homework_9.resources.FileLoggerConfiguration;
-import dehtiar.homeworks.homework_9.resources.StdoutLogger;
-import dehtiar.homeworks.homework_9.resources.StdoutLoggerConfiguration;
+import dehtiar.homeworks.homework_9.exceptions.FileMaxSizeReachedException;
+import dehtiar.homeworks.homework_9.models.FileLogger;
+import dehtiar.homeworks.homework_9.models.FileLoggerConfigurationLoader;
+import java.io.IOException;
 
+/**
+ * @author Yaroslav Dehtiar on 10.12.2022
+ */
 public class Main {
 
   public static void main(String[] args) {
+    FileLoggerConfigurationLoader flcl = new FileLoggerConfigurationLoader();
+    FileLogger fl = new FileLogger(
+        flcl.load("src\\dehtiar\\homeworks\\homework_9\\resources\\my_custom_configuration.properties"));
 
-    Loggable fileLogger = new FileLogger(new FileLoggerConfiguration());
-    Loggable stdoutLogger = new StdoutLogger(new StdoutLoggerConfiguration());
-
-    for (int i = 0; i < 30; i++) {
-
-      stdoutLogger.info("Test Log!");
-      stdoutLogger.debug("Test Debug!");
-
+    try {
+      fl.info("Hello.Testing text was written from info.");
+      fl.debug("Hello.Testing text was written from debug.");
+    } catch (IOException e) {
+      throw new RuntimeException(e);
+    } catch (FileMaxSizeReachedException e) {
+      throw new RuntimeException(e);
     }
-
   }
 
 }
